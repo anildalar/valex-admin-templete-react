@@ -1,0 +1,262 @@
+var gulp = require('gulp');
+sass = require('gulp-sass');
+postcss = require("gulp-postcss");
+autoprefixer = require("autoprefixer");
+var sourcemaps = require('gulp-sourcemaps');
+var browserSync = require('browser-sync').create();
+cssbeautify = require('gulp-cssbeautify');
+var beautify = require('gulp-beautify');
+
+
+//_______ task for scss folder to css main style
+gulp.task('watch', function() {
+	console.log('Command executed successfully compiling SCSS in assets.');
+	 return gulp.src('valex/assets/scss/**/*.scss')
+		.pipe(sourcemaps.init())
+		.pipe(sass())
+		.pipe(beautify.css({ indent_size: 4 }))
+		.pipe(sourcemaps.write(''))
+		.pipe(gulp.dest('valex/assets/css'))
+		.pipe(browserSync.reload({
+		  stream: true
+	}))
+})
+
+//_______task for style-dark
+gulp.task('dark', function(){
+   return gulp.src('valex/assets/css/style-dark.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass())
+		.pipe(beautify.css({ indent_size: 4 }))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('valex/assets/css'));
+
+});
+
+
+//_______task for leftmenu
+gulp.task('menu', function(){
+   return gulp.src('valex/assets/css/sidemenu.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass())
+		.pipe(beautify.css({ indent_size: 4 }))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('valex/assets/css'));
+
+});
+
+//_______task for skinmodes
+gulp.task('skin', function(){
+	return gulp.src('valex/assets/css/skin-modes.scss')
+		 .pipe(sourcemaps.init())
+		 .pipe(sass())
+		 .pipe(beautify.css({ indent_size: 4 }))
+		 .pipe(sourcemaps.write('.'))
+		 .pipe(gulp.dest('valex/assets/css'));
+
+ });
+
+//_______task for boxed
+gulp.task('boxed', function(){
+	return gulp.src('valex/assets/css/boxed.scss')
+		 .pipe(sourcemaps.init())
+		 .pipe(sass())
+		 .pipe(beautify.css({ indent_size: 4 }))
+		 .pipe(sourcemaps.write('.'))
+		 .pipe(gulp.dest('valex/assets/css'));
+
+ });
+
+//_______task for dark-boxed
+gulp.task('dark-boxed', function(){
+	return gulp.src('valex/assets/css/dark-boxed.scss')
+		 .pipe(sourcemaps.init())
+		 .pipe(sass())
+		 .pipe(beautify.css({ indent_size: 4 }))
+		 .pipe(sourcemaps.write('.'))
+		 .pipe(gulp.dest('valex/assets/css'));
+
+ });
+
+
+//_______task for closed-menu
+gulp.task('closed-menu', function(){
+	return gulp.src('valex/assets/css/closed-sidemenu.scss')
+		 .pipe(sourcemaps.init())
+		 .pipe(sass())
+		 .pipe(beautify.css({ indent_size: 4 }))
+		 .pipe(sourcemaps.write('.'))
+		 .pipe(gulp.dest('valex/assets/css'));
+
+ });
+
+ //_______task for menu-text
+gulp.task('menu-text', function(){
+	return gulp.src('valex/assets/css/')
+		 .pipe(sourcemaps.init())
+		 .pipe(sass())
+		 .pipe(beautify.css({ indent_size: 4 }))
+		 .pipe(sourcemaps.write('.'))
+		 .pipe(gulp.dest('valex/assets/css'));
+
+ });
+
+ //_______task for menu-hover
+gulp.task('menu-hover', function(){
+	return gulp.src('valex/assets/css/sidemenu3.scss')
+		 .pipe(sourcemaps.init())
+		 .pipe(sass())
+		 .pipe(beautify.css({ indent_size: 4 }))
+		 .pipe(sourcemaps.write('.'))
+		 .pipe(gulp.dest('valex/assets/css'));
+
+ });
+
+ //_______task for menu-hover-style
+gulp.task('menu-hover1', function(){
+	return gulp.src('valex/assets/css/sidemenu4.scss')
+		 .pipe(sourcemaps.init())
+		 .pipe(sass())
+		 .pipe(beautify.css({ indent_size: 4 }))
+		 .pipe(sourcemaps.write('.'))
+		 .pipe(gulp.dest('valex/assets/css'));
+
+ });
+
+  //_______task for toggle-menu
+gulp.task('toggle-menu', function(){
+	return gulp.src('valex/assets/css/sidemenu-responsive-tabs.scss')
+		 .pipe(sourcemaps.init())
+		 .pipe(sass())
+		 .pipe(beautify.css({ indent_size: 4 }))
+		 .pipe(sourcemaps.write('.'))
+		 .pipe(gulp.dest('valex/assets/css'));
+
+ });
+
+
+/*--- RTl Version ---*/
+
+//_______ task for scss folder to css main style-rtl
+gulp.task('watch-rtl', function() {
+	console.log('Command executed successfully compiling SCSS in assets.');
+	 return gulp.src('valex/assets/scss-rtl/**/*.scss')
+		.pipe(sourcemaps.init())
+		.pipe(sass())
+		.pipe(beautify.css({ indent_size: 4 }))
+		.pipe(sourcemaps.write(''))
+		.pipe(gulp.dest('valex/assets/css-rtl'))
+		.pipe(browserSync.reload({
+		  stream: true
+	}))
+})
+
+//_______task for style-dark
+gulp.task('dark-rtl', function(){
+   return gulp.src('valex/assets/css-rtl/style-dark.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass())
+		.pipe(beautify.css({ indent_size: 4 }))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('valex/assets/css-rtl'));
+
+});
+
+
+//_______task for leftmenu
+gulp.task('menu-rtl', function(){
+   return gulp.src('valex/assets/css-rtl/sidemenu.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass())
+		.pipe(beautify.css({ indent_size: 4 }))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('valex/assets/css-rtl'));
+
+});
+
+//_______task for skinmodes
+gulp.task('skin-rtl', function(){
+	return gulp.src('valex/assets/css-rtl/skin-modes.scss')
+		 .pipe(sourcemaps.init())
+		 .pipe(sass())
+		 .pipe(beautify.css({ indent_size: 4 }))
+		 .pipe(sourcemaps.write('.'))
+		 .pipe(gulp.dest('valex/assets/css-rtl'));
+
+ });
+
+//_______task for boxed
+gulp.task('boxed-rtl', function(){
+	return gulp.src('valex/assets/css-rtl/boxed.scss')
+		 .pipe(sourcemaps.init())
+		 .pipe(sass())
+		 .pipe(beautify.css({ indent_size: 4 }))
+		 .pipe(sourcemaps.write('.'))
+		 .pipe(gulp.dest('valex/assets/css-rtl'));
+
+ });
+
+//_______task for dark-boxed
+gulp.task('dark-boxed-rtl', function(){
+	return gulp.src('valex/assets/css-rtl/dark-boxed.scss')
+		 .pipe(sourcemaps.init())
+		 .pipe(sass())
+			.pipe(beautify.css({ indent_size: 4 }))
+		 .pipe(sourcemaps.write('.'))
+		 .pipe(gulp.dest('valex/assets/css-rtl'));
+
+ });
+
+
+//_______task for closed-menu
+gulp.task('closed-menu-rtl', function(){
+	return gulp.src('valex/assets/css-rtl/closed-sidemenu.scss')
+		 .pipe(sourcemaps.init())
+		 .pipe(sass())
+		 .pipe(beautify.css({ indent_size: 4 }))
+		 .pipe(sourcemaps.write('.'))
+		 .pipe(gulp.dest('valex/assets/css-rtl'));
+
+ });
+
+ //_______task for menu-text
+gulp.task('menu-text-rtl', function(){
+	return gulp.src('valex/assets/css-rtl/sidemenu1.scss')
+		 .pipe(sourcemaps.init())
+		 .pipe(sass())
+		 .pipe(beautify.css({ indent_size: 4 }))
+		 .pipe(sourcemaps.write('.'))
+		 .pipe(gulp.dest('valex/assets/css-rtl'));
+
+ });
+ //_______task for menu-hover
+gulp.task('menu-hover-rtl', function(){
+	return gulp.src('valex/assets/css-rtl/sidemenu3.scss')
+		 .pipe(sourcemaps.init())
+		 .pipe(sass())
+		 .pipe(beautify.css({ indent_size: 4 }))
+		 .pipe(sourcemaps.write('.'))
+		 .pipe(gulp.dest('valex/assets/css-rtl'));
+
+ });
+ //_______task for menu-hover-style
+gulp.task('menu-hover1-rtl', function(){
+	return gulp.src('valex/assets/css-rtl/sidemenu4.scss')
+		 .pipe(sourcemaps.init())
+		 .pipe(sass())
+		 .pipe(beautify.css({ indent_size: 4 }))
+		 .pipe(sourcemaps.write('.'))
+		 .pipe(gulp.dest('valex/assets/css-rtl'));
+
+ });
+
+  //_______task for toggle-menu
+gulp.task('toggle-menu-rtl', function(){
+	return gulp.src('valex/assets/css-rtl/sidemenu-responsive-tabs.scss')
+		 .pipe(sourcemaps.init())
+		 .pipe(sass())
+		 .pipe(beautify.css({ indent_size: 4 }))
+		 .pipe(sourcemaps.write('.'))
+		 .pipe(gulp.dest('valex/assets/css-rtl'));
+
+ });
